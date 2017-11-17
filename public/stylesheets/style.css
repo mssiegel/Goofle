@@ -1,0 +1,130 @@
+/* For Headline at Top of Page */
+#goofle {
+  text-align: center;
+  font-family: "comic sans MS", cursive, sans-serif;
+  font-size: 5rem;
+  margin: 1rem 0 0 0;
+  line-height:1;
+}
+
+#g {
+  color: #4885ed;
+}
+
+#o1 {
+  color: #db3236;
+}
+
+#o2 {
+  color: #f4c20d;
+}
+
+#f {
+  color: #4885ed;
+}
+
+#l {
+  color: #3cba54;
+}
+
+#e {
+  color: #db3236;
+}
+
+#big-red {
+ font-size: 2rem;
+ color: red;
+ text-align: center;
+ margin-bottom: 2rem;
+}
+
+/* For Form on Left */
+.red-text {
+ color: red;
+}
+
+#form-box {
+ background-color: #ffff66;
+ border: 1px solid navy;
+ border-radius: 25px;
+}
+
+#formInfo {
+ padding: 1rem;
+}
+
+#inputImage {
+ display:none;
+}
+
+.thumb-image {
+ width: 150px;
+ height: 150px;
+}
+
+.small-bottom-margin {
+ margin-bottom: 0.5rem;
+}
+
+.button-stuff {
+  border: 1px solid navy;
+}
+
+.button-stuff-border {
+  border: 1px solid navy;
+  margin: 1rem 0;
+}
+
+.margin-top {
+ margin-top: 1.5rem;
+}
+
+.bold {
+ font-weight: bold;
+}
+
+/* For Example Image on Right */
+#big-size {
+ font-size: 1.5rem;
+ margin: .2rem;
+}
+
+.hover-opaque:hover {
+ filter:drop-shadow(8px 8px 10px black);
+}
+
+#example-image {
+ border: 1px solid navy;
+ width: 100%;
+}
+
+.good-width {
+ width: 100%;
+}
+
+/* Media Queries */
+
+@media only screen and (min-width: 768px) {
+    #form-box {
+      width: 70%;
+      margin: auto;
+    }
+ #example-image {
+  width: 80%;
+ }
+}
+
+/* for Creative Result Page */
+.cool-border {
+  border: 3px solid blue;
+  margin: 30px;
+}
+
+.good-margin {
+  padding: 25px;
+}
+
+.grey-background {
+  background-color: gray;
+ color: darkblue;
+}

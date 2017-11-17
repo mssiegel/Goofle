@@ -1,0 +1,65 @@
+extends layout
+
+block content
+  div(class='container-fluid')
+    p(id='goofle')
+      span(id='g') G
+      span(id='o1') o
+      span(id='o2') o
+      span(id='g') f
+      span(id='l') l
+      span(id='e') e
+    p(id='big-red') Prank your friend
+    div(class='row')
+    
+      // Form Info
+      div(class='col-md-6')
+        p(class='text-center') Create a #[span(class='red-text') fake] image featuring your friend as Google's #1 hit
+        div(id='form-box')
+          form(id='formInfo' method='POST' action='/creativeResult' enctype="multipart/form-data")
+            div(class="row small-bottom-margin")
+              label(for="inputName" class="col-sm-4 bold") Friend's name:
+              div(class="col-sm-6")
+                input(type="text" class="form-control" id="inputName" name="inputName" placeholder="Ex: Moshe Siegel" required)
+            p(class="small-bottom-margin bold") Select a category:
+            div(class='row')
+             div(class="col-md-4")
+             div(class="col-md-8")
+               input(type="radio" name="category-selected" id="smelliest-farter" value="smelliest-farter" disabled)
+               label(for="smelliest-farter") Smelliest Farter (Coming soon)
+               br
+               input(type="radio" name="category-selected" id="best-shopper" value="best-shopper" checked)
+               label(for="best-shopper") Best Shopper
+               br
+               input(type="radio" name="category-selected" id="cutest-baby" value="cutest-baby" disabled)
+               label(for="cutest-baby") Cutest Baby (Coming soon)
+            div(class="text-center margin-top")
+              label(for="inputImage" class="btn btn-primary button-stuff") Upload friend's photo (Required)
+              input(type="file" id="inputImage" name="inputImage" accept="image/*" onchange="previewImage(this);" required)
+              br
+              img(id="preview" src="#")
+              hr
+            div(class="text-center")
+                button(type="submit" class="btn btn-success btn-lg button-stuff-border") Submit &amp; Create Image
+  
+      // Example Image
+      div(class="col-md-1")
+      
+      div(class="col-md-5")
+        p(id="big-size") Example
+        a(data-toggle="modal" data-target=".bd-example-modal-lg") 
+          img(class="hover-opaque" id="example-image" src='https://vkqqww.bn1302.livefilestore.com/y4mMudxQinrbzIr7O8sJVBiUZwqB7n7WZVb8itsU8sJyIZ3wc-J6CkokYMFk24xFZmBf0wtsJytzEyQeqkxbHMJocOsvbs8mmzUmiFEX3xs84e5HiOw1q43VLPvQ_jyodvj_aQJSvKa_5br07d6ZLWMBwY5SxCWuO53UYszwRtLkWlR08GRgK2TtpGDDcKjMfhCvgIURRQifi1sriXL1zhWng?width=819&height=675&cropmode=none' atr="Example Image of Fake Google Results")
+        
+    br
+    p(class="bold text-center") Developed by Moshe Siegel & friends. Email Moshe with questions, praises, and feedback at siegel.moshes@gmail.com
+    
+    // Modal Contents
+    div(class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true")
+      div(class="modal-dialog modal-lg")
+        div(class="modal-content")
+          div(class="modal-header")
+            h5(class="modal-title") Example
+            button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+              span(aria-hidden="true") &times;
+          div(class="modal-body")
+            img(class="good-width" src='https://vkqqww.bn1302.livefilestore.com/y4mMudxQinrbzIr7O8sJVBiUZwqB7n7WZVb8itsU8sJyIZ3wc-J6CkokYMFk24xFZmBf0wtsJytzEyQeqkxbHMJocOsvbs8mmzUmiFEX3xs84e5HiOw1q43VLPvQ_jyodvj_aQJSvKa_5br07d6ZLWMBwY5SxCWuO53UYszwRtLkWlR08GRgK2TtpGDDcKjMfhCvgIURRQifi1sriXL1zhWng?width=819&height=675&cropmode=none' atr="Example Image of Fake Google Results")
