@@ -195,7 +195,7 @@ router.post('/', upload, function (req, res, next) {
  // var finalDataSrc = 'example3.png';
   await browser.close();
 
-  res.render('creativeResult', {title: 'Your Creative Result', inputName: req.body.inputName, inputImage: datauri.content, inputFinalImage: "YourGoofleImage.png"});
+  res.render('creativeresult', {title: 'Your Creative Result', inputName: req.body.inputName, inputImage: datauri.content, inputFinalImage: "YourGoofleImage.png"});
 
  
 })();
