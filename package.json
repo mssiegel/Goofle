@@ -1,9 +1,9 @@
 {
   "name": "goofle2",
   "version": "0.0.0",
-  "engines": {
-    "node": "8.9.1"
-  },
+  //"engines": {
+  //  "node": "8.9.1"
+  //},
   "private": true,
   "description": "Displays people in fake Google search screenshots",
   "author": "Moshe Siegel siegel.moshes@gmail.com",
