@@ -197,7 +197,7 @@ router.post('/', upload, function (req, res, next) {
 
   res.render('creativeresult', {title: 'Your Creative Result', inputName: req.body.inputName, inputImage: datauri.content, inputFinalImage: "YourGoofleImage.png"});
 
- 
+ // random comment to be deleted
 })();
       
 }) 
