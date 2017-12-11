@@ -118,6 +118,7 @@
 .cool-border {
   border: 3px solid blue;
   margin: 30px;
+  max-width: 85%;
 }
 
 .good-margin {
