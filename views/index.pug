@@ -33,14 +33,16 @@ block content
                br
                input(type="radio" name="category-selected" id="cutest-baby" value="cutest-baby" disabled)
                label(for="cutest-baby") Cutest Baby (Coming soon)
-            div(class="text-center margin-top")
-              label(for="inputImage" class="btn btn-primary button-stuff") Upload friend's photo (Required)
-              input(type="file" id="inputImage" name="inputImage" accept="image/*" onchange="previewImage(this);" required)
-              br
+            div(class='row margin-top')
+              label(for="inputImage" class="col-sm-4 bold") Upload image:
+              div(class="col-sm-6")
+                input(type='file' name='inputImage' accept='image/*' onchange='previewImage(this);' required)  
+                br
+            div(class="text-center")
               img(id="preview" src="#")
               hr
             div(class="text-center")
-                button(type="submit" class="btn btn-success btn-lg button-stuff-border") Submit &amp; Create Image
+                button(type="submit" class="btn btn-primary btn-lg submit-button-border") Submit &amp; Create Image
   
       // Example Image
       div(class="col-md-1")

@@ -27,7 +27,6 @@ router.post('/', upload, function (req, res, next) {
   const page = await browser.newPage();
   var inputName= req.body.inputName;
 
-  //await page.goto(`data:text/html,
    await page.setContent(`
 
 <!DOCTYPE html>
@@ -192,6 +191,7 @@ router.post('/', upload, function (req, res, next) {
 
   );
   var finalImage = await page.screenshot({path: "public/YourGoofleImage.png", fullPage: true});
+  //uncomment below to covert final image to a data URI
   //var finalDataUri = new Datauri();
   //finalDataUri.format('.png', finalImage);
   await browser.close();

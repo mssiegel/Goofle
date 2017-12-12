@@ -8,7 +8,7 @@ function previewImage(input) {
 
   reader.onload = function (e) {
    $('#preview').attr('src', e.target.result);
-   $('#preview').attr('class', 'thumb-image');
+   $('#preview').attr('class', 'thumb-image margin-top');
   }
 
   reader.readAsDataURL(input.files[0]);
