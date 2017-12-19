@@ -21,6 +21,7 @@ const puppeteer = require('puppeteer');
 router.post('/', upload, function (req, res, next) {
 
   jimp.read(req.file.buffer, function(err, image) {
+
     if (err) {
       console.log('Error Occured');
     }
@@ -34,6 +35,7 @@ router.post('/', upload, function (req, res, next) {
         });
         const page = await browser.newPage();
         var inputName= req.body.inputName;
+        //var formImageURI = formImageURI;
 
         await page.setContent(`
 
@@ -205,11 +207,11 @@ router.post('/', upload, function (req, res, next) {
         //var finalDataUri = new Datauri();
         //finalDataUri.format('.png', finalImage);
         await browser.close();
+        await res.render('creativeresult', {title: 'Your Creative Result', inputName: req.body.inputName, inputFinalImage: "YourGoofleImage.png"});
 
         //closes the async funtion for puppeteer
       })();
 
-      res.render('creativeresult', {title: 'Your Creative Result', inputName: req.body.inputName, inputFinalImage: "YourGoofleImage.png"});
       // closes the getBase64 callback from jimp
     });
     // closes the jimp.read
