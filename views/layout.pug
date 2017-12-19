@@ -10,8 +10,12 @@ html(lang='en')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js')
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src='/javascripts/main.js')
+    
+    // use Keen IO from Heroku to track page views, clicks, and form submissions
+    script(type='text/javascript').
+     function createKeenWebAutoCollector(){window.keenWebAutoCollector=window.KeenWebAutoCollector.create({projectId:'5a39528046e0fb00018e24bb',writeKey:'07A37D5C113E1F2F1E9B43E13C4E1F41E6528740B91C7B3AB4F66C954D09B898515797413E5ED443E588F18B65EF59AE895AA7398B2465B9FB6498E3445393A013912F3735BA20023AB86811A3FCD32A01DC4AFD6DE4A5381322B1203C3C0166',onloadCallbacks:window.keenWebAutoCollector.onloadCallbacks}),window.keenWebAutoCollector.loaded()}function initKeenWebAutoCollector(){window.keenWebAutoCollector.domReady()?window.createKeenWebAutoCollector():document.addEventListener("readystatechange",function(){window.keenWebAutoCollector.domReady()&&window.createKeenWebAutoCollector()})}window.keenWebAutoCollector={onloadCallbacks:[],onload:function(a){this.onloadCallbacks.push(a)},domReady:function(){return["ready","complete"].indexOf(document.readyState)>-1}};
+    script(async='', type='text/javascript', src='https://d26b395fwzu5fz.cloudfront.net/keen-web-autocollector-1.0.8.min.js', onload='initKeenWebAutoCollector()')
+
   body
 
-  // publishes leaderboard ad on top of page using Revenue Hits 
-  script(data-cfasync='false', type='text/javascript', src='//p259960.clksite.com/adServe/banners?tid=259960_500250_0')
   block content
