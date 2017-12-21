@@ -25,7 +25,7 @@ router.post('/', upload, function (req, res, next) {
     if (err) {
       console.log('Error Occured');
     }
-    image.resize(150, jimp.AUTO)
+    image.resize(150, jimp.AUTO).exifRotate()
     .getBase64(  image.getMIME() , (err, formImageURI) => {
       if(err) { throw err}
 
