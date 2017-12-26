@@ -38,8 +38,8 @@ block content
               div(class="col-sm-6")
                 input(type='file' name='inputImage' accept='image/*' onchange='previewImage(this);' required)  
                 br
-            div(class="text-center")
-              img(id="preview" src="#")
+            div(class="text-center" id ="preview")
+
               hr
             div(class="text-center")
                 button(type="submit" class="btn btn-primary btn-lg submit-button-border") Submit &amp; Create Image
@@ -47,13 +47,16 @@ block content
       // Example Image
       div(class="col-md-1")
       
+      // Example Image
       div(class="col-md-5")
         p(id="big-size") Example
         a(data-toggle="modal" data-target=".bd-example-modal-lg") 
           img(class="hover-opaque" id="example-image" src='https://vkqqww.bn1302.livefilestore.com/y4mMudxQinrbzIr7O8sJVBiUZwqB7n7WZVb8itsU8sJyIZ3wc-J6CkokYMFk24xFZmBf0wtsJytzEyQeqkxbHMJocOsvbs8mmzUmiFEX3xs84e5HiOw1q43VLPvQ_jyodvj_aQJSvKa_5br07d6ZLWMBwY5SxCWuO53UYszwRtLkWlR08GRgK2TtpGDDcKjMfhCvgIURRQifi1sriXL1zhWng?width=819&height=675&cropmode=none' atr="Example Image of Fake Google Results")
         
     br
-    p(class="bold text-center") Developed by Moshe Siegel & friends. Email Moshe with questions, praises, and feedback at siegel.moshes@gmail.com
+    p(class="bold text-center") Developed by Moshe Siegel &amp; friends. Email Moshe with questions, praises, and feedback at siegel.moshes@gmail.com
+    
+    div(id="creating-result")
     
     // Modal Contents
     div(class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true")

@@ -1,6 +1,24 @@
 $(document).ready(function () {
+  $('#formInfo').on('submit', (e) => {
+    $('#creating-result').attr('class', 'absolute-center');
+    document.getElementById("creating-result").innerHTML='<img src="/smileyGif.gif" class="center-image" /> <h3 class="text-center">Creating Awesome Stuff</h3>';
+  });
+});
 
-})
+function previewImage(input) {
+  if (input.files[0]) {
+    document.getElementById("preview").innerHTML='<div class="loader"></div> <h2>Image Loading...</h2>';
+     getDataUrl(input.files[0], function (imgBase64) {
+       if (imgBase64) {
+         document.getElementById("preview").innerHTML='<img src=' + imgBase64 + ' class="thumb-image margin-top"/>';
+       }
+       else {document.getElementById("preview").innerHTML='<h4 class="margin-top">Image did not load. Choose another image. </h4>';}
+     });
+  }
+   else {
+     document.getElementById("preview").innerHTML='';
+   }
+}
 
 // function getDataUrl automatically corrects orientation of images from smartphone cameras
 // this function lets previewImage function work properly
@@ -13,8 +31,17 @@ function getDataUrl(file, callback2) {
                 var img = new Image();
 
                 img.onload = function () {
-                    var width = img.width,
-                        height = img.height,
+                  var count = 1,
+                      width1 = img.width;
+                  // resizes image down to a width of less than 150px
+                  while (width1 > 150) {
+                    width1 *= .90;
+                    count *= .90;
+                  }
+                  console.log(count);
+
+                    var width = img.width * count,
+                        height = img.height * count,
                         canvas = document.createElement('canvas'),
                         ctx = canvas.getContext("2d");
 
@@ -40,7 +67,7 @@ function getDataUrl(file, callback2) {
                     }
 
                     // draw image
-                    ctx.drawImage(img, 0, 0);
+                    ctx.drawImage(img, 0, 0, width, height);
 
                     // export base64
                     callback2(canvas.toDataURL());
@@ -78,26 +105,3 @@ function getDataUrl(file, callback2) {
         };
         reader.readAsArrayBuffer(file);
     }
-
-function previewImage(input) {
-   getDataUrl(input.files[0], function (imgBase64) {
-    $('#preview').attr('src', imgBase64);
-    $('#preview').attr('class', 'thumb-image margin-top');
-});
-}
-
-
-/*
-function previewImage(input) {
- if (input.files && input.files[0]) {
-  var reader = new FileReader();
-
-  reader.onload = function (e) {
-   $('#preview').attr('src', e.target.result);
-   $('#preview').attr('class', 'thumb-image margin-top');
-  }
-
-  reader.readAsDataURL(input.files[0]);
- }
-};
-*/
