@@ -1,7 +1,7 @@
 $(document).ready(function () {
   $('#formInfo').on('submit', (e) => {
     $('#creating-result').attr('class', 'absolute-center');
-    document.getElementById("creating-result").innerHTML='<img src="/smileyGif.gif" class="center-image" /> <h3 class="text-center">Creating Awesome Stuff</h3>';
+    document.getElementById("creating-result").innerHTML='<img src="smileyGif.gif" class="center-image" /> <h3 class="text-center">Creating Awesome Stuff</h3>';
   });
 });
 
@@ -33,12 +33,11 @@ function getDataUrl(file, callback2) {
                 img.onload = function () {
                   var count = 1,
                       width1 = img.width;
-                  // resizes image down to a width of less than 150px
-                  while (width1 > 150) {
+                  // resizes image down to a width of less than 165px
+                  while (width1 > 165) {
                     width1 *= .90;
                     count *= .90;
                   }
-                  console.log(count);
 
                     var width = img.width * count,
                         height = img.height * count,

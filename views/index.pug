@@ -25,14 +25,21 @@ block content
             div(class='row')
              div(class="col-md-4")
              div(class="col-md-8")
-               input(type="radio" name="category-selected" id="smelliest-farter" value="smelliest-farter" disabled)
-               label(for="smelliest-farter") Smelliest Farter (Coming soon)
+               input(type="radio" name="categorySelected" id="friendliest-smile" value="friendliest-smile" checked)
+               label(for="friendliest-smile") Friendliest Smile
                br
-               input(type="radio" name="category-selected" id="best-shopper" value="best-shopper" checked)
-               label(for="best-shopper") Best Shopper
+               input(type="radio" name="categorySelected" id="smelliest-farter" value="smelliest-farter")
+               label(for="smelliest-farter") Smelliest Farter
                br
-               input(type="radio" name="category-selected" id="cutest-baby" value="cutest-baby" disabled)
-               label(for="cutest-baby") Cutest Baby (Coming soon)
+               //
+                input(type="radio" name="categorySelected" id="best-shopper" value="best-shopper")
+                label(for="best-shopper") Best Shopper
+                br
+               input(type="radio" name="categorySelected" id="cutest-baby" value="cutest-baby")
+               label(for="cutest-baby") Cutest Baby
+               br
+               input(type="radio" name="categorySelected" id="random" value="random")
+               label(for="random" class="bold") Random
             div(class='row margin-top')
               label(for="inputImage" class="col-sm-4 bold") Upload image:
               div(class="col-sm-6")
