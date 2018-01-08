@@ -12,7 +12,7 @@ var upload = multer({ storage: storage }).single('inputImage');
 const jimp = require('jimp');
 
 /* NO longer Used!   Datauri converts stored buffer file to data uri */
-// NO Longer Used!   const Datauri = require('datauri');
+const Datauri = require('datauri');
 
 //Using Puppeteer to insert user uploaded data into google template and then screenshot the result
 const puppeteer = require('puppeteer');
@@ -34,12 +34,14 @@ router.post('/', upload, function (req, res, next) {
       if(err) { throw err}
 
       (async () => {
-        const width1 = 1000;
-        const height1 = 650;
+
         const browser = await puppeteer.launch({
           args: ['--no-sandbox', '--disable-setuid-sandbox']
         });
         const page = await browser.newPage();
+        const width1 = 1000;
+        const height1 = 650;
+
         await page.setViewport({width: width1, height: height1});
         var inputName = req.body.inputName;
 
@@ -47,8 +49,8 @@ router.post('/', upload, function (req, res, next) {
         // form Input name = ${inputName}
 
         if (req.body.categorySelected === "random") {
-          const choices = ["friendliest-smile", "smelliest-farter", "cutest-baby"] ;
-          const randomChoice = choices[Math.floor(Math.random() * choices.length)];
+          const choices = ["friendliest-smile", "smelliest-farter", "cutest-baby"];
+          const randomChoice = await choices[Math.floor(Math.random() * choices.length)];
           req.body.categorySelected = randomChoice;
         };
 
@@ -64,14 +66,14 @@ router.post('/', upload, function (req, res, next) {
               break;
         }
 
-        await page.screenshot({path: "public/YourGoofleImage.png", clip: {x:0, y:0, width:width1, height:height1} });
+        //await page.screenshot({path: "public/YourGoofleImage.png", clip: {x:0, y:0, width:width1, height:height1} });
 
         //uncomment below to covert final image to a data URI
-        //var finalImage = await page.screenshot({path: "public/YourGoofleImage.png", fullPage: true});
-        //var finalDataUri = new Datauri();
-        //finalDataUri.format('.png', finalImage);
+        var finalImage = await page.screenshot({clip: {x:0, y:0, width:width1, height:height1} });
+        var datauri = new Datauri();
+        datauri.format('.png', finalImage);
         await browser.close();
-        await res.render('creativeresult', {title: 'Your Creative Result', inputName: req.body.inputName, inputFinalImage: "YourGoofleImage.png"});
+        await res.render('creativeresult', {title: 'Your Creative Result', inputName: req.body.inputName, inputFinalImage: datauri.content});
 
         //closes the async funtion for puppeteer
       })();
