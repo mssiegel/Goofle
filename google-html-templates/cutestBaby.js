@@ -52,7 +52,7 @@ exports.cutestBaby = function (inputImage, inputName) {
 
             <p class="title"> Holy Smokies Jeepers Creepers</p>
             <p class="green-link">https://www.un.org/world-united-by-cute-baby</p>
-            <p class="summary-text">In an amazing championship win, ${inputName} has been declared as the world's cutest baby. "${inputName} is even more of a cutie pie than me," said Justin Bieber as he fist pumped the air. "Today shall be known as the day I fainted in awe at the cuteness ${inputName}."</p>
+            <p class="summary-text">In an amazing championship win, ${inputName} has been declared as the world's cutest baby. "${inputName} is even more of a cutie pie than me," said Justin Bieber as he fist pumped the air. "Today shall be known as the day I fainted in awe at the cuteness of ${inputName}."</p>
 
             <p class="title">Celebrities gush over cuteness of ${inputName}</p>
             <p class="green-link">https://www.washingtonpost.com/2018/cutest-baby-results-are-in</p>

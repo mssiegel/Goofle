@@ -25,7 +25,7 @@ block content
             div(class='row')
              div(class="col-md-4")
              div(class="col-md-8")
-               input(type="radio" name="categorySelected" id="friendliest-smile" value="friendliest-smile" checked)
+               input(type="radio" name="categorySelected" id="friendliest-smile" value="friendliest-smile")
                label(for="friendliest-smile") Friendliest Smile
                br
                input(type="radio" name="categorySelected" id="smelliest-farter" value="smelliest-farter")
@@ -38,7 +38,7 @@ block content
                input(type="radio" name="categorySelected" id="cutest-baby" value="cutest-baby")
                label(for="cutest-baby") Cutest Baby
                br
-               input(type="radio" name="categorySelected" id="random" value="random")
+               input(type="radio" name="categorySelected" id="random" value="random" checked)
                label(for="random" class="bold") Random
             div(class='row margin-top')
               label(for="inputImage" class="col-sm-4 bold") Upload image:
@@ -58,10 +58,13 @@ block content
       div(class="col-md-5")
         p(id="big-size") Example
         a(data-toggle="modal" data-target=".bd-example-modal-lg") 
-          img(class="hover-opaque" id="example-image" src='https://vkqqww.bn1302.livefilestore.com/y4mMudxQinrbzIr7O8sJVBiUZwqB7n7WZVb8itsU8sJyIZ3wc-J6CkokYMFk24xFZmBf0wtsJytzEyQeqkxbHMJocOsvbs8mmzUmiFEX3xs84e5HiOw1q43VLPvQ_jyodvj_aQJSvKa_5br07d6ZLWMBwY5SxCWuO53UYszwRtLkWlR08GRgK2TtpGDDcKjMfhCvgIURRQifi1sriXL1zhWng?width=819&height=675&cropmode=none' atr="Example Image of Fake Google Results")
+          img(class="hover-opaque" id="example-image" src="/images/lego-batman-smile.png" atr="Example Image of Fake Google Results")
         
     br
-    p(class="bold text-center") Developed by Moshe Siegel &amp; friends. Email Moshe with questions, praises, and feedback at siegel.moshes@gmail.com
+    p(class="text-center") Want to make Goofle better? Email us with suggestions, praises, and feedback at #[a(href="siegel.moshes@gmail.com") siegel.moshes@gmail.com]
+    p(class="text-center") Like Goofle? Help sponsor us by #[a(href='https://www.paypal.me/moshesiegel/39') donating to Goofle]
+    p(class="text-center") Developed by Moshe Siegel &amp; friends 
+
     
     div(id="creating-result")
     
@@ -74,4 +77,4 @@ block content
             button(type="button" class="close" data-dismiss="modal" aria-label="Close")
               span(aria-hidden="true") &times;
           div(class="modal-body")
-            img(class="good-width" src='https://vkqqww.bn1302.livefilestore.com/y4mMudxQinrbzIr7O8sJVBiUZwqB7n7WZVb8itsU8sJyIZ3wc-J6CkokYMFk24xFZmBf0wtsJytzEyQeqkxbHMJocOsvbs8mmzUmiFEX3xs84e5HiOw1q43VLPvQ_jyodvj_aQJSvKa_5br07d6ZLWMBwY5SxCWuO53UYszwRtLkWlR08GRgK2TtpGDDcKjMfhCvgIURRQifi1sriXL1zhWng?width=819&height=675&cropmode=none' atr="Example Image of Fake Google Results")
+            img(class="good-width" src='/images/lego-batman-smile.png' atr="Example Image of Fake Google Results")

@@ -1,20 +1,20 @@
 var express = require('express');
 var router = express.Router();
 
-/* Multer handles multipart/form-data, allowing form to upload files. */
-var multer = require('multer');
+// Multer handles multipart/form-data, allowing form to upload files
+const multer = require('multer');
 
-/* Using Multer to convert uploaded image to buffer file and store it in memory. */
+// Using Multer to convert uploaded image to buffer file and store it in memory
 var storage = multer.memoryStorage()
 var upload = multer({ storage: storage }).single('inputImage');
 
 // Using Jimp to both resize uploaded image and also convert it to a data URI
 const jimp = require('jimp');
 
-/* NO longer Used!   Datauri converts stored buffer file to data uri */
+// Using Datauri to convert buffer file into a data URI
 const Datauri = require('datauri');
 
-//Using Puppeteer to insert user uploaded data into google template and then screenshot the result
+// Using Puppeteer to insert user uploaded data into google template and then screenshot the result
 const puppeteer = require('puppeteer');
 
 
@@ -29,7 +29,8 @@ router.post('/', upload, function (req, res, next) {
     if (err) {
       console.log('Error Occured');
     }
-    image.resize(150, jimp.AUTO).exifRotate()
+    image.resize(150, jimp.AUTO)
+    .exifRotate()
     .getBase64(  image.getMIME() , (err, formImageURI) => {
       if(err) { throw err}
 
@@ -44,9 +45,6 @@ router.post('/', upload, function (req, res, next) {
 
         await page.setViewport({width: width1, height: height1});
         var inputName = req.body.inputName;
-
-        // form Image src = ${formImageURI}
-        // form Input name = ${inputName}
 
         if (req.body.categorySelected === "random") {
           const choices = ["friendliest-smile", "smelliest-farter", "cutest-baby"];
@@ -66,16 +64,18 @@ router.post('/', upload, function (req, res, next) {
               break;
         }
 
-        //await page.screenshot({path: "public/YourGoofleImage.png", clip: {x:0, y:0, width:width1, height:height1} });
+        // await page.screenshot({path: "public/YourGoofleImage.png", clip: {x:0, y:0, width:width1, height:height1} });
 
-        //uncomment below to covert final image to a data URI
-        var finalImage = await page.screenshot({clip: {x:0, y:0, width:width1, height:height1} });
-        var datauri = new Datauri();
-        datauri.format('.png', finalImage);
+        // grabs screenshot as a buffer
+        var capturedScreenshot = await page.screenshot({clip: {x:0, y:0, width:width1, height:height1} });
         await browser.close();
+        //converts screenshot buffer into a data URI
+        var datauri = new Datauri();
+        datauri.format('.png', capturedScreenshot);
+
         await res.render('creativeresult', {title: 'Your Creative Result', inputName: req.body.inputName, inputFinalImage: datauri.content});
 
-        //closes the async funtion for puppeteer
+        // closes the async funtion for puppeteer
       })();
 
       // closes the getBase64 callback from jimp

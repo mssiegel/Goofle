@@ -52,7 +52,7 @@ exports.smelliestFarter = function (inputImage, inputName) {
 
             <p class="title">Holy Smokies Jeepers Creepers</p>
             <p class="green-link">https://www.un.org/world-united-by-smelly-fart</p>
-            <p class="summary-text">In an amazing championship win, ${inputName} has been declared as the world's smelliest farter. "${inputName} is an even smellier farter more than me," said Justin Bieber as he fist pumped the air. "Today shall be known as the day I fainted in awe at the power of ${inputName}'s farts."</p>
+            <p class="summary-text">In an amazing championship win, ${inputName} has been declared as the world's smelliest farter. "${inputName} is an even smellier farter than me," said Justin Bieber as he fist pumped the air. "Today shall be known as the day I fainted in awe at the power of ${inputName}'s farts."</p>
 
             <p class="title">Celebrities gush over smelliness of ${inputName}'s farts</p>
             <p class="green-link">https://www.washingtonpost.com/2018/smelliest-farter-results-are-in</p>
@@ -60,7 +60,7 @@ exports.smelliestFarter = function (inputImage, inputName) {
 
             <p class="title">Smellier than a Smelly Smell?</p>
             <p class="green-link">www.cuteandfunny.com/2018/you-gotta-love-that-fart</p>
-            <p class="summary-text">Goodness gracious!!! As in zoinks! Like howdy duty! Yowzies! Um, oh my gawwwwd! Those are like da only words to describe ${inputName}'s farts...</p>
+            <p class="summary-text">Goodness gracious ${inputName}!!! As in zoinks! Like howdy duty! Yowzies! Um, oh my gawwwwd! Those are like da only words to describe ${inputName}'s farts...</p>
 
           </body>
           </html>

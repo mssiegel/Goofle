@@ -60,7 +60,7 @@ exports.friendliestSmile = function (inputImage, inputName) {
 
             <p class="title">Smilier than a Smiley Smiler?</p>
             <p class="green-link">www.cuteandfunny.com/2018/you-gotta-love-that-smile</p>
-            <p class="summary-text">Goodness gracious!!! As in zoinks! Like howdy duty! Yowzies! Um, oh my gawwwwd! Those are like da only words to describe ${inputName}'s smile...</p>
+            <p class="summary-text">Goodness gracious ${inputName}!!! As in zoinks! Like howdy duty! Yowzies! Um, oh my gawwwwd! Those are like da only words to describe ${inputName}'s smile...</p>
 
           </body>
           </html>
