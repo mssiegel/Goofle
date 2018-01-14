@@ -1,8 +1,10 @@
 extends layout
 
 block content
-    h1(class="good-margin") You are so creative!!! Your image is below. Copy and share it with your friends!!
+    h1(class="good-margin") Here's your Goofle. Copy and share it with your friends!!
+    //a(class='button btn btn-primary btn-lg margin10 disabled', href="#") Go to Image page
+    a(class='button btn btn-primary btn-lg margin10', href='javascript:history.back()') Back to Home page
+
     div(class="grey-background")
       img(src=inputFinalImage class="cool-border")
-        
         
