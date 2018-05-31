@@ -41,10 +41,11 @@ block content
                input(type="radio" name="categorySelected" id="random" value="random" checked)
                label(for="random" class="bold") Random
             div(class='row margin-top')
-              label(for="inputImage" class="col-sm-4 bold") Upload image:
+              label(for="inputImage" class="col-sm-4 bold") Upload image (REQUIRED):
               div(class="col-sm-6")
                 input(type='file' name='inputImage' accept='image/*' onchange='previewImage(this);' required)  
                 br
+                
             div(class="text-center" id ="preview")
 
               hr
