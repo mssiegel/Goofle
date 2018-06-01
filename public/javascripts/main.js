@@ -1,23 +1,39 @@
+const imageRequiredHTML= '<p class="warning">Image is REQUIRED</p>';
+
 $(document).ready(function () {
   $('#formInfo').on('submit', (e) => {
+    if(!$('#inputImage').val()){
+      $('#preview').html(imageRequiredHTML);
+      return false;
+    }
+
     $('#creating-result').attr('class', 'absolute-center');
     document.getElementById("creating-result").innerHTML='<img src="smileyGif.gif" class="center-image" /> <h3 class="text-center">Creating Awesome Stuff</h3>';
   });
 });
 
+
 function previewImage(input) {
-  if (input.files[0]) {
-    document.getElementById("preview").innerHTML='<div class="loader"></div> <h2>Image Loading...</h2>';
-     getDataUrl(input.files[0], function (imgBase64) {
-       if (imgBase64) {
-         document.getElementById("preview").innerHTML='<img src=' + imgBase64 + ' class="thumb-image margin-top"/>';
-       }
-       else {document.getElementById("preview").innerHTML='<h4 class="margin-top">Image did not load. Choose another image. </h4>';}
-     });
+  const maxFileSize = 5e+6; //very large files will take too long to process
+  const file = input.files[0];
+
+  if (!file) {
+    $('#preview').html(imageRequiredHTML);
+    return;
   }
-   else {
-     document.getElementById("preview").innerHTML='';
-   }
+  else if(file.size > maxFileSize){
+    $('#preview').html('<p class="warning">Images cannot be larger than 5 megabytes, choose another image</p>');
+    input.value = "";
+    return;
+  }
+
+  document.getElementById("preview").innerHTML='<div class="loader"></div> <h2>Image Loading...</h2>';
+    getDataUrl(input.files[0], function (imgBase64) {
+      if (imgBase64) {
+        document.getElementById("preview").innerHTML='<img src=' + imgBase64 + ' class="thumb-image margin-top"/>';
+      }
+      else {document.getElementById("preview").innerHTML='<p class="margin-top warning">Image did not load. Choose another image. </p>';}
+    });
 }
 
 // function getDataUrl automatically corrects orientation of images from smartphone cameras

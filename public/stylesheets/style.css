@@ -74,6 +74,15 @@
  font-weight: bold;
 }
 
+.warning{
+  font-weight: bold;
+  color: red;
+  font-size: 1.4rem;
+  text-align: center;
+  display: block;
+  border: 1px solid red;
+}
+
 
 /* For Example Image on Right */
 #big-size {

@@ -43,9 +43,9 @@ block content
             div(class='row margin-top')
               label(for="inputImage" class="col-sm-4 bold") Upload image (REQUIRED):
               div(class="col-sm-6")
-                input(type='file' name='inputImage' accept='image/*' onchange='previewImage(this);' required)  
+                input(type='file' name='inputImage' id='inputImage' accept='.png, .jpg, .jpeg' onchange='previewImage(this);')  
                 br
-                
+              
             div(class="text-center" id ="preview")
 
               hr
